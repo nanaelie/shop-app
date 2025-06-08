@@ -14,13 +14,12 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "#5c4430",
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
           default: {},
@@ -29,17 +28,34 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Accueil',
+          tabBarIcon: () => <IconSymbol size={28} name="accueil" color="#5b4432" />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="categories"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Catégories',
+          tabBarIcon: () => <IconSymbol size={28} name="categorie" color="#5b4432" />,
         }}
       />
+      <Tabs.Screen
+        name="panier"
+        options={{
+          title: 'Panier',
+          tabBarIcon: () => <IconSymbol size={28} name="panier" color="#5b4432" />,
+        }}
+      />
+      <Tabs.Screen
+        name="parametres"
+        options={{
+          title: 'Paramètres',
+          tabBarIcon: () => <IconSymbol size={28} name="parametres" color="#5b4432" />,
+        }}
+      />
+      <Tabs.Screen name="accessoires" options={{href: null,}}/>
+      <Tabs.Screen name="telephones" options={{href: null,}}/>
+      <Tabs.Screen name="details" options={{href: null,}}/>
     </Tabs>
   );
 }
